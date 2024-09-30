@@ -1,0 +1,25 @@
+/* client/src/pages/Home.css */
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  h1 {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card {
+    border-radius: 15px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .list-unstyled li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+  

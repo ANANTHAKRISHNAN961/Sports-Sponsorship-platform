@@ -1,0 +1,27 @@
+/* client/src/components/Footer.css */
+
+.footer {
+    background-color: #343a40; /* Dark background */
+    color: white; /* Text color */
+    padding: 20px 0;
+  }
+  
+  .footer .social-icons {
+    margin: 15px 0;
+  }
+  
+  .footer .social-icons a {
+    color: white; /* Icon color */
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #ffcc00; /* Change icon color on hover */
+  }
+  
+  .footer-text {
+    margin-top: 10px;
+  }
+  

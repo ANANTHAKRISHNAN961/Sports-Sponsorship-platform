@@ -1,0 +1,17 @@
+/* client/src/index.css or a main CSS file */
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .App {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Set minimum height to full viewport */
+  }
+  
+  .content {
+    flex: 1; /* Allow content to grow and fill available space */
+  }
+  
