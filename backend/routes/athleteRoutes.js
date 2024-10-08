@@ -1,8 +1,8 @@
+// athleteRoutes.js
 const express = require('express');
-const { getAthleteById, createAthlete } = require('../controllers/athleteController');
+const { registerAthlete } = require('../controllers/athleteController');
 const router = express.Router();
 
-router.route('/:id').get(getAthleteById);
-router.route('/').post(createAthlete);
+router.post('/register', registerAthlete);
 
 module.exports = router;

@@ -5,6 +5,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [userType, setUserType] = useState('athlete'); // athlete or sponsor
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -14,19 +15,21 @@ const Register = () => {
         setSuccess('');
 
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register', {
+            const endpoint = userType === 'athlete'
+                ? 'http://localhost:5000/api/athletes/register'
+                : 'http://localhost:5000/api/sponsors/register';
+
+            const response = await axios.post(endpoint, {
                 name,
                 email,
                 password,
             });
 
             if (response.data.success) {
-                // Handle successful registration
                 setSuccess('Registration successful! You can now log in.');
                 console.log('Registration successful', response.data);
             }
         } catch (error) {
-            // Handle error
             console.error('Registration error:', error.response.data);
             setError('Registration failed. Please check your details and try again.');
         }
@@ -67,6 +70,17 @@ const Register = () => {
                         onChange={(e) => setPassword(e.target.value)} 
                         required 
                     />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">User Type</label>
+                    <select 
+                        className="form-control" 
+                        value={userType} 
+                        onChange={(e) => setUserType(e.target.value)}
+                    >
+                        <option value="athlete">Athlete</option>
+                        <option value="sponsor">Sponsor</option>
+                    </select>
                 </div>
                 <button type="submit" className="btn btn-primary">Register</button>
             </form>

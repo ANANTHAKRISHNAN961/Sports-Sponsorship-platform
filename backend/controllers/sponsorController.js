@@ -1,24 +1,29 @@
 const Sponsor = require('../models/Sponsor');
+const bcrypt = require('bcrypt');
 
-// Get sponsor profile by ID
-exports.getSponsorById = async (req, res) => {
-  try {
-    const sponsor = await Sponsor.findById(req.params.id);
-    if (!sponsor) return res.status(404).json({ message: 'Sponsor not found' });
-    res.json(sponsor);
-  } catch (error) {
-    res.status(500).json({ error: 'Server error' });
-  }
+exports.registerSponsor = async (req, res) => {
+    const { name, company, email, password } = req.body;
+    try {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const sponsor = new Sponsor({ name, company, email, password: hashedPassword });
+        await sponsor.save();
+        res.status(201).json({ message: 'Sponsor registered successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error registering sponsor', error });
+    }
 };
 
-// Create sponsor profile
-exports.createSponsor = async (req, res) => {
-  try {
-    const { name, email, password, company } = req.body;
-    const newSponsor = new Sponsor({ name, email, password, company });
-    await newSponsor.save();
-    res.status(201).json(newSponsor);
-  } catch (error) {
-    res.status(500).json({ error: 'Error creating sponsor' });
-  }
+exports.loginSponsor = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const sponsor = await Sponsor.findOne({ email });
+        if (!sponsor) return res.status(404).json({ message: 'Sponsor not found' });
+
+        const isPasswordValid = await bcrypt.compare(password, sponsor.password);
+        if (!isPasswordValid) return res.status(400).json({ message: 'Invalid credentials' });
+
+        res.status(200).json({ message: 'Login successful' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error during login', error });
+    }
 };

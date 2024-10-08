@@ -1,8 +1,8 @@
 const express = require('express');
-const { getSponsorById, createSponsor } = require('../controllers/sponsorController');
+const { registerSponsor, loginSponsor } = require('../controllers/sponsorController');
 const router = express.Router();
 
-router.route('/:id').get(getSponsorById);
-router.route('/').post(createSponsor);
+router.post('/register', registerSponsor);
+router.post('/login', loginSponsor);
 
 module.exports = router;
