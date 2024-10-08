@@ -23,16 +23,36 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/" activeClassName="active">Home</NavLink>
+                            <NavLink 
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} 
+                                to="/"
+                            >
+                                Home
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/login" activeClassName="active">Login</NavLink>
+                            <NavLink 
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} 
+                                to="/login"
+                            >
+                                Login
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/register" activeClassName="active">Register</NavLink>
+                            <NavLink 
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} 
+                                to="/register"
+                            >
+                                Register
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/sponsor" activeClassName="active">Sponsor Dashboard</NavLink>
+                            <NavLink 
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} 
+                                to="/sponsor"
+                            >
+                                Sponsor Dashboard
+                            </NavLink>
                         </li>
                     </ul>
                 </div>

@@ -3,7 +3,7 @@ const Athlete = require('../models/Athlete');
 const bcrypt = require('bcrypt');
 
 exports.registerAthlete = async (req, res) => {
-    const { name, email, password, bio } = req.body; // Assuming bio can also be sent during registration
+    const { name, email, password,bio } = req.body; // Assuming bio can also be sent during registration
     try {
         // Check if the email already exists
         const existingAthlete = await Athlete.findOne({ email });
