@@ -1,11 +1,51 @@
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ffd700; /* Gold color on hover */
+}
+
+.nav-link.active {
+    font-weight: bold; /* Bold text for active link */
+    text-decoration: underline; /* Underline for active link */
+}
+/* App.css */
+
+/* Ensure the body takes full height and has no margin */
+/* App.css */
+
+/* Ensure the body takes full height and has no margin */
 body {
-    background-color: #f8f9fa;
+    margin: 0; /* Remove default body margin */
+    height: 100vh; /* Full height of the viewport */
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+/* Flex container to take the full height */
+.d-flex {
+    display: flex; /* Enable flexbox */
 }
 
-.navbar {
-    margin-bottom: 20px;
+.flex-column {
+    flex-direction: column; /* Arrange items in a column */
+}
+
+.flex-fill {
+    flex: 1; /* Fill available space */
+}
+
+/* Override Bootstrap's default container styles */
+.container-fluid {
+    padding-left: 0; /* Remove left padding */
+    padding-right: 0; /* Remove right padding */
+}
+
+/* Footer styles */
+.footer {
+    background-color: #343a40; /* Dark background */
+    color: white; /* Text color */
+    text-align: center; /* Centered text */
+    padding: 1rem; /* Padding for the footer */
+    width: 100%; /* Full width */
 }

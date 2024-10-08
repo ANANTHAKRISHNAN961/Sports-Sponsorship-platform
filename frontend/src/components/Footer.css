@@ -1,0 +1,10 @@
+/* Footer.css */
+
+.footer {
+    background-color: #343a40; /* Dark background */
+    color: white; /* Text color */
+    text-align: center; /* Centered text */
+    padding: 1rem; /* Padding for the footer */
+    width: 100%; /* Full width */
+    position: relative; /* Change to relative */
+}

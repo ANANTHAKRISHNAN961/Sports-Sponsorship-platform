@@ -1,0 +1,52 @@
+/* Home.css */
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f8f9fa; /* Light background for the page */
+}
+
+header {
+    background: linear-gradient(135deg, #007bff 0%, #6610f2 100%); /* Gradient background */
+    padding: 80px 0; /* Extra padding for better visual */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Increased font size */
+}
+
+header p {
+    font-size: 1.25rem; /* Slightly larger paragraph text */
+}
+
+section {
+    margin-top: -40px; /* Move section up to reduce space */
+}
+
+.card {
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+footer {
+    background-color: #343a40; /* Dark footer */
+    color: #ffffff; /* White text in footer */
+}
+
+/* Navbar styles */
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ffd700; /* Gold color on hover */
+}
+
+.nav-link.active {
+    font-weight: bold; /* Bold text for active link */
+    text-decoration: underline; /* Underline for active link */
+}
